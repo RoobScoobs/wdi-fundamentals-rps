@@ -43,7 +43,7 @@ function getWinner(playerMove,computerMove) {
     // The rules of the game are that 'rock' beats 'scissors', 'scissors' beats 'paper', and 'paper' beats 'rock'.
     /* YOUR CODE HERE */
     if (playerMove === computerMove) {
-    	return winner = "tie";
+    	return winner = 'tie';
     }
     else if ((playerMove === 'rock' && computerMove === 'scissors') || (playerMove === 'scissors' && computerMove === 'paper') || (playerMove === 'paper' && computerMove === 'rock')) {
     	return winner = 'player';
@@ -59,6 +59,17 @@ function playToFive() {
     var computerWins = 0;
     // Write code that plays 'Rock, Paper, Scissors' until either the player or the computer has won five times.
     /* YOUR CODE HERE */
+    var winner = getWinner(getPlayerMove(),getComputerMove());
+    var playtoFive = 5;
+    for (var x = 0; x <= playtoFive, x += 1) {
+    	if (winner === 'player') {
+    		playerWins += 1;
+    	} else if (winner === 'computer') {
+    		computerWins += 1;
+    } 
+    console.log('Player chose ' + playerMove + ' while Computer chose ' + computerMove);
+    console.log('The score is currently ' + playerWins + ' to ' + computerWins + '\n');
+    }
     return [playerWins, computerWins];
 }
 
